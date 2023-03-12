@@ -1,8 +1,8 @@
-let email = document.getElementById("email");
-let message = document.getElementById("message")
+//let email = document.getElementById("email");
+//let message = document.getElementById("message")
 
 function sendEmail() {
-	Email.send({
+	/*Email.send({
 	Host: "smtp.gmail.com",
 	Username : "domi@mokosh.dev",
 	Password : "M0k0shd0td3v",
@@ -10,7 +10,7 @@ function sendEmail() {
 	From : "email",
 	Subject : "form submission",
 	Body : "message",
-	}).then(
-		message => alert("mail sent successfully")
-	);
+	}).then( */
+		message => alert("mail sent successfully");
+	//);
 }
