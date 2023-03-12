@@ -22,8 +22,8 @@ $mail->Host = "smtp.gmail.com";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
-$mail->Username = "wojewska.dominika@gmail.com";
-$mail->Password = "St4rg4z3r_D10";
+$mail->Username = "domi@mokosh.dev";
+$mail->Password = "M0k0shd0td3v";
 
 // pass in the values from the contact form
 $mail->setFrom($email);
