@@ -1,26 +1,30 @@
 <?php
-error_reporting(-1);
-ini_set('display_errors', 'On');
-set_error_handler("var_dump");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require "vendor/autoload.php";
+
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
 
 $email = $_POST["email"];
 $message = $_POST["message"];
 
-require "vendor/autoload.php";
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-
 $mail = new PHPMailer(true); //create a mailer class
-//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+
+try {
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 
-// access my stp server 
+// access my smtp server 
 $mail->Host = "smtp.gmail.com";
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+$mail->Port = 465;
 
 $mail->Username = "domi@mokosh.dev";
 $mail->Password = "M0k0shd0td3v";
@@ -28,9 +32,12 @@ $mail->Password = "M0k0shd0td3v";
 // pass in the values from the contact form
 $mail->setFrom($email);
 $mail->addAddress("groaning.witch@gmail.com"); //send to this address
+$mail->isHTML(true); 
 $mail->Body = $message;
 
 $mail->send(); //send it
 
 echo "form submitted successfully";
-?>
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
