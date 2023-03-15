@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async data-id="five-server" src="http://localhost:5500/fiveserver.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <title>Contact form</title>
 </head>
@@ -20,7 +21,7 @@
             <input id="email" name="email" type="email" required placeholder="Your email"/>
         
         <textarea id="message" name="message" placeholder="Your message..." rows="5"></textarea>
-        <input class="button" type="submit" value="Send">
+        <input class="button" type="submit" value="Send" onclick="sendEmail()"/>
         </fieldset>
     </form>
 </body>
