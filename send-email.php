@@ -22,9 +22,9 @@ $mail->isSMTP();
 $mail->SMTPAuth = true;
 
 // access my smtp server 
-$mail->Host = "smtp.gmail.com";
+$mail->Host = "smtp-relay.gmail.com";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-$mail->Port = 465;
+$mail->Port = 587;
 
 $mail->Username = "domi@mokosh.dev";
 $mail->Password = "M0k0shd0td3v";
