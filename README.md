@@ -7,7 +7,7 @@ Goal of this project was to write backend code to handle HTML form submission. I
 * PHP
 
 # Live
-[Here](witchdevelops.github.io/PHP-form-test/)
+[Here](https://witchdevelops.github.io/PHP-form-test/)
 
 # Issue
 I keep getting "405 access denied" error. Gmail seetings seem to be fine.
